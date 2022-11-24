@@ -28,10 +28,6 @@ app.use(cookieParser());
 
 mongoDBConnect();
 
-app.get('/', (req, res) => {
-  res.render('index');
-});
-
 app.use(
   startRouter,
   checkoutRouter,
