@@ -10,12 +10,20 @@
   "author": "Ilya030290",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^5.1.0",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.18.2",
-    "stripe": "^11.1.0"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.7.2",
+    "stripe": "^11.1.0",
+    "validator": "^13.7.0"
   },
   "devDependencies": {
     "dotenv": "^16.0.3",
-    "nodemon": "^2.0.20"
+    "eslint": "^8.22.0",
+    "eslint-config-prettier": "^8.5.0",
+    "nodemon": "^2.0.20",
+    "prettier": "^2.8.0"
   }
 }
