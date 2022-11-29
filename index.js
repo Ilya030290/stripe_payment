@@ -18,11 +18,7 @@ app.use(express.json());
 
 app.use(express.urlencoded({ extended: true }));
 
-app.use(cors({
-  origin: process.env.WEB_APP_URL,
-  credentials: true,
-  optionsSuccessStatus: 200,
-}));
+app.use(cors({ origin: true }));
 
 app.use(cookieParser());
 
