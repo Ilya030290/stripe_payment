@@ -1,15 +1,11 @@
-const fs = require('fs')
-
 const getModel = async (req, res) => {
-  const { modelName } = req.params
-  await fs.readFile(`./3dModels/${modelName}`, (err, data) => {
-    if (err) {
-      res.statusCode = 400
-      res.end('Resource not found!')
-    } else {
-      res.end(data)
-    }
-  })
-}
+  try {
+    const { modelName } = req.params;
+    const filePath = `./3dModels/${modelName}`;
+    res.download(filePath);
+  } catch (error) {
+    res.status(404).json({ error: error.message });
+  }
+};
 
 module.exports = getModel;
