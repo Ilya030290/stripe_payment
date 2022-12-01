@@ -1,7 +1,7 @@
 const stripeApi = require('./../stripe');
 
 async function createCheckoutSession(req, res) {
-  const domainUrl = 'https://threejs-shop-production.up.railway.app';
+  const domainUrl = process.env.WEB_APP_URL || process.env.WEB_APP_SECOND_URL;
   const { line_items, customer_email } = req.body;
   if (!line_items || !customer_email) {
     return res.status(400).json({ error: 'missing required session parameters' });
