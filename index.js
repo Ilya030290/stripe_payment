@@ -13,6 +13,7 @@ const categoriesRouter = require('./routes/categories');
 const authRouter = require('./routes/auth');
 const startRouter = require('./routes/start');
 const usersRouter = require('./routes/users');
+const modelsRouter = require('./routes/models');
 
 app.use(express.json());
 
@@ -30,7 +31,8 @@ app.use(
   categoriesRouter,
   shopItemsRouter,
   authRouter,
-  usersRouter
+  usersRouter,
+  modelsRouter
 );
 
 app.listen(port, () => {
