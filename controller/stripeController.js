@@ -1,7 +1,7 @@
 const stripeApi = require('./../stripe');
 
 async function createCheckoutSession(req, res) {
-  const domainUrl = process.env.WEB_APP_SECOND_URL || 'http://localhost:3000';
+  const domainUrl = process.env.API_URL;
   const { line_items, customer_email } = req.body;
   if (!line_items || !customer_email) {
     return res.status(400).json({ error: 'missing required session parameters' });
@@ -19,7 +19,6 @@ async function createCheckoutSession(req, res) {
     });
     res.status(200).json({ sessionId: session.id });
   } catch (error) {
-    console.log(error);
     res.status(400).json({ error: 'an error occured, unable to create session' });
   }
 }
